@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/bili_color_light_gray">
+
+    <TextView
+        android:id="@+id/title"
+        android:text="带阴影的圆角矩形"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:background="@drawable/layer_list_test3"/>
+
+</RelativeLayout>

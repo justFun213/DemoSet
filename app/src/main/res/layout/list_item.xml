@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.demo.song.view.view.TestLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="19sp"
+        android:text="横向滑动View"
+        android:layout_margin="2dp"/>
+
+</com.demo.song.view.view.TestLinearLayout>
