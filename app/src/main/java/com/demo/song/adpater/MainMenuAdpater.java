@@ -44,6 +44,7 @@ public class MainMenuAdpater extends RecyclerView.Adapter<Menu> {
         mList.add("MyDrawableListActivity");
         mList.add("MyServiceListActivity");
         mList.add("MyAnimateListActivity");
+        //无聊测试一下
         mList.add("MyFrameListActivity");
     }
 
