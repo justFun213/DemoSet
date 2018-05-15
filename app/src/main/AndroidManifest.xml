@@ -6,9 +6,9 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -85,6 +85,8 @@
         <activity android:name="com.demo.song.drawable.shape.LayerListActivity" />
         <activity android:name="com.demo.song.service.MyServiceListActivity" />
         <activity android:name="com.demo.song.service.ServiceActivity" />
+        <activity android:name="com.demo.song.webview.MyWebViewListActivity" />
+        <activity android:name="com.demo.song.webview.WebviewTestActivity" />
 
         <service
             android:name="com.demo.song.service.service.MyService"
@@ -103,7 +105,8 @@
         <activity android:name="com.demo.song.frame.MyFrameListActivity" />
         <activity android:name="com.demo.song.frame.RetrofitActivity" />
         <activity android:name="com.demo.song.frame.ButterKnifeActivity" />
-        <activity android:name="com.demo.song.frame.OkHttpActivity"></activity>
+        <activity android:name="com.demo.song.frame.OkHttpActivity" />
+        <activity android:name="com.demo.song.webview.WebviewTestActivity"></activity>
     </application>
 
 </manifest>
