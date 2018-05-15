@@ -16,6 +16,7 @@ import com.demo.song.frame.MyFrameListActivity;
 import com.demo.song.service.MyServiceListActivity;
 import com.demo.song.theme.ThemeDemoActivity;
 import com.demo.song.view.MyViewListActivity;
+import com.demo.song.webview.MyWebViewListActivity;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -46,6 +47,7 @@ public class MainMenuAdpater extends RecyclerView.Adapter<Menu> {
         mList.add("MyAnimateListActivity");
         //无聊测试一下 哈哈  你是不是傻
         mList.add("MyFrameListActivity");
+        mList.add("MyWebViewListActivity");
     }
 
     @Override
@@ -114,6 +116,9 @@ public class MainMenuAdpater extends RecyclerView.Adapter<Menu> {
                 break;
             case 9:
                 intent=new Intent(context, MyFrameListActivity.class);
+                break;
+            case 10:
+                intent=new Intent(context, MyWebViewListActivity.class);
                 break;
             default:
         }
