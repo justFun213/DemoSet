@@ -36,6 +36,7 @@ captures/
 *.iml
 .idea/workspace.xml
 .idea/tasks.xml
+.idea/project.xml
 .idea/gradle.xml
 .idea/dictionaries
 .idea/libraries
