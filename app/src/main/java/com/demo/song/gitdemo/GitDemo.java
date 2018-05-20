@@ -6,6 +6,8 @@ public class GitDemo {
     public static final String TAG="com.demo.song.gitdemo";
     public static void print(){
         Log.d(TAG,"单纯打印测一下大富豪doif和o");
-        Log.d(TAG,"dsfsdfsdfretergeggerergo");
+        Log.d(TAG,"dsf大幅度释放速度居etergeggerergo");
+        Log.d(TAG,"萨顶顶vsfvsgsfgo");
+
     }
 }
