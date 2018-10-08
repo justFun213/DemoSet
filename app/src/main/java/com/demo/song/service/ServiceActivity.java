@@ -115,7 +115,7 @@ public class ServiceActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(getBasePackageName()+"ServiceActivity","onDestroy");
+        Log.d("ServiceActivity","onDestroy");
         if(musicPlayer!=null){
             musicPlayer.stopMusic();
             unbindService(serviceConnection);

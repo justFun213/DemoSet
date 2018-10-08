@@ -1,12 +1,8 @@
 package com.demo.song.fragment;
 
-import android.app.ActivityThread;
 import android.app.FragmentTransaction;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
 
 import com.demo.song.demoset.R;
 import com.demo.song.fragment.fragment.TestFragment;
