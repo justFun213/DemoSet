@@ -1,5 +1,6 @@
 package com.demo.song.adpater;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -61,6 +62,7 @@ public class MainMenuAdpater extends RecyclerView.Adapter<Menu> {
         final TextView temp=holder.titleView;
         holder.titleView.setText(mList.get(position));
         holder.titleView.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("LongLogTag")
             @Override
             public void onClick(View v) {
                 Log.e(TAG, temp == v ? "true" : "false");

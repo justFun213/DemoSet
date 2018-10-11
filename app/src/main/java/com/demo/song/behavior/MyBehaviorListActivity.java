@@ -10,11 +10,11 @@ public class MyBehaviorListActivity extends BaseListActivity {
 
     @Override
     public String[] getData() {
-        return new String[]{"BehaviorActivity","coordinatorlayoutDemo"};
+        return new String[]{"BehaviorActivity","coordinatorlayoutDemo","BehaviorActivity1"};
     }
 
     @Override
     public Class[] getClasses() {
-        return new Class[]{BehaviorActivity.class,coordinatorlayoutDemo.class};
+        return new Class[]{BehaviorActivity.class,coordinatorlayoutDemo.class,BehaviorActivity1.class};
     }
 }

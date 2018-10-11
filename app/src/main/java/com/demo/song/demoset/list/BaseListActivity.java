@@ -48,7 +48,7 @@ public abstract class BaseListActivity extends AppCompatActivity {
         });
     }
 
-    static class MyAdpater extends BaseAdapter{
+    public static class MyAdpater extends BaseAdapter{
         private  String[] mData;
 
 

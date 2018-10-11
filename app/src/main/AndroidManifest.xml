@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.demo.song.demoset">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -15,7 +16,8 @@
         android:icon="@mipmap/ic_launcher_rain"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -106,7 +108,9 @@
         <activity android:name="com.demo.song.frame.RetrofitActivity" />
         <activity android:name="com.demo.song.frame.ButterKnifeActivity" />
         <activity android:name="com.demo.song.frame.OkHttpActivity" />
-        <activity android:name="com.demo.song.webview.WebviewTestActivity"></activity>
+        <activity android:name="com.demo.song.webview.WebviewTestActivity"
+            tools:ignore="DuplicateActivity" />
+        <activity android:name="com.demo.song.behavior.BehaviorActivity1"/>
     </application>
 
 </manifest>

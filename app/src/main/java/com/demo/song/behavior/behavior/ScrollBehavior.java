@@ -1,4 +1,4 @@
-package com.demo.song.behavior.behave;
+package com.demo.song.behavior.behavior;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
