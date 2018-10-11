@@ -12,6 +12,7 @@ import android.view.View;
 public class Behavior1 extends CoordinatorLayout.Behavior<View> {
 
     private float trDistance;
+    private float deltaY;
 
     public Behavior1() {}
 
@@ -26,13 +27,22 @@ public class Behavior1 extends CoordinatorLayout.Behavior<View> {
 
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) {
-        if(trDistance-0.0001<0){
+        if (deltaY == 0) {
+            deltaY = dependency.getY() - child.getHeight();
+        }
+
+        float dy = dependency.getY() - child.getHeight();
+        dy = dy < 0 ? 0 : dy;
+
+        float y = -(dy / deltaY) * child.getHeight();
+        child.setTranslationY(y);
+   /*     if(trDistance-0.0001<0){
             trDistance=dependency.getY()-child.getHeight();
         }
         float scrollY=dependency.getY()-child.getHeight();
         float translateY=-scrollY/trDistance*child.getHeight();
         translateY=Math.min(0,Math.max(-child.getHeight(),translateY));
-        child.setTranslationY(translateY);
+        child.setTranslationY(translateY);*/
         return true;
     }
 }

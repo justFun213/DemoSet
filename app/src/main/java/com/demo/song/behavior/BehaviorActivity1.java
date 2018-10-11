@@ -19,7 +19,7 @@ public class BehaviorActivity1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_behavior1);
-        recyclerView= (RecyclerView) findViewById(R.id.my_list);
+        recyclerView= findViewById(R.id.my_list);
         DemoAdapter.mockData(recyclerView);
     }
 }
