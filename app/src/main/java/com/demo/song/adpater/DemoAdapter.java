@@ -15,7 +15,7 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.ViewHolder> {
 
     private String[] data;
 
-    public DemoAdapter(String[] datas){
+    DemoAdapter(String[] datas){
         data=datas;
     }
 
@@ -36,14 +36,14 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return data.length;
+        return data==null?0:data.length;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+     static class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView textView;
 
-        public ViewHolder(View itemView) {
+         ViewHolder(View itemView) {
             super(itemView);
             textView= (TextView) itemView;
         }

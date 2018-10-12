@@ -108,9 +108,11 @@
         <activity android:name="com.demo.song.frame.RetrofitActivity" />
         <activity android:name="com.demo.song.frame.ButterKnifeActivity" />
         <activity android:name="com.demo.song.frame.OkHttpActivity" />
-        <activity android:name="com.demo.song.webview.WebviewTestActivity"
+        <activity
+            android:name="com.demo.song.webview.WebviewTestActivity"
             tools:ignore="DuplicateActivity" />
-        <activity android:name="com.demo.song.behavior.BehaviorActivity1"/>
+        <activity android:name="com.demo.song.behavior.BehaviorActivity1" />
+        <activity android:name="com.demo.song.behavior.BehaviorActivity2"></activity>
     </application>
 
 </manifest>
