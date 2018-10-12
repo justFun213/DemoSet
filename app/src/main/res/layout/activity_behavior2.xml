@@ -13,11 +13,13 @@
         android:gravity="center"
         android:text="Hello world"
         android:textColor="#ffffff"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        app:layout_behavior="com.demo.song.behavior.behavior.Behavior2Top"/>
     
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.demo.song.behavior.behavior.Behavior2Bottom"/>
 
 </android.support.design.widget.CoordinatorLayout>
