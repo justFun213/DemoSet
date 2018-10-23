@@ -21,13 +21,13 @@ public class Behavior2Bottom extends CoordinatorLayout.Behavior {
 
     @Override
     public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) {
-        return false;
+        return dependency instanceof TextView;
     }
 
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) {
-        float dy=dependency.getBottom();
-        dy=dy<=0? 0:dy;
+        float dy=dependency.getHeight()+dependency.getTranslationY();
+        dy=dy<0? 0:dy;
         child.setY(dy);
         return true;
     }

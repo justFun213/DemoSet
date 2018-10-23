@@ -31,11 +31,11 @@ public class Behavior1 extends CoordinatorLayout.Behavior<View> {
             maxRvDistance=translationY;
         translationY=translationY<0 ? 0:translationY;
 
-        translationY=-child.getHeight()*translationY/maxRvDistance;
-        child.setTranslationY(translationY);
+//        translationY=-child.getHeight()*translationY/maxRvDistance;
+//        child.setTranslationY(translationY);
 
-//        translationY=1-translationY/maxRvDistance;
-//        child.setAlpha(translationY);
+        translationY=1-translationY/maxRvDistance;
+        child.setAlpha(translationY);
         return true;
     }
 }

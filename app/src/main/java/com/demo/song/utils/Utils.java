@@ -3,6 +3,7 @@ package com.demo.song.utils;
 import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.util.Log;
 
 /**
  * Created by song on 2017/7/3.
@@ -43,6 +44,10 @@ public class Utils {
     public static float getTextTop(Paint paint){
         Paint.FontMetrics fontMetrics=paint.getFontMetrics();
         return fontMetrics.top;
+    }
+
+    public static void logPrint(Object object,String str){
+        Log.e(object.getClass().getName(),str);
     }
 
 }

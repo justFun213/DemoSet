@@ -11,11 +11,11 @@ import android.widget.TextView;
  * 功能描述：
  * Created by Administrator on 2018/10/11.
  */
-public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.ViewHolder> {
+public class DemoRecylerViewAdapter extends RecyclerView.Adapter<DemoRecylerViewAdapter.ViewHolder> {
 
     private String[] data;
 
-    DemoAdapter(String[] datas){
+    private DemoRecylerViewAdapter(String[] datas){
         data=datas;
     }
 
@@ -53,7 +53,7 @@ public class DemoAdapter extends RecyclerView.Adapter<DemoAdapter.ViewHolder> {
         LinearLayoutManager manager=new LinearLayoutManager(recyclerView.getContext());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(new DemoAdapter(new String[]{"A","B","C","D","E","B","C","D","E"
+        recyclerView.setAdapter(new DemoRecylerViewAdapter(new String[]{"A","B","C","D","E","B","C","D","E"
                 ,"B","C","D","E","B","C","D","E","B","C","D","E","B","C","D","E","B","C","D","E"
                 ,"B","C","D","E","B","C","D","E","B","C","D","E","B","C","D","E","B","C","D","E"
                 ,"B","C","D","E","B","C","D","E","B","C","D","E","B","C","D","E","B","C","D","E"

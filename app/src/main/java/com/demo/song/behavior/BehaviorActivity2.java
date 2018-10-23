@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 
-import com.demo.song.adpater.DemoAdapter;
+import com.demo.song.adpater.DemoRecylerViewAdapter;
 import com.demo.song.demoset.R;
 
 public class BehaviorActivity2 extends AppCompatActivity {
@@ -14,6 +14,6 @@ public class BehaviorActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_behavior2);
         RecyclerView recyclerView=findViewById(R.id.my_list);
-        DemoAdapter.mockData(recyclerView);
+        DemoRecylerViewAdapter.mockData(recyclerView);
     }
 }
