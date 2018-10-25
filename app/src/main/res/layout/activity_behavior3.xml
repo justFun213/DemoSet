@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.demo.song.behavior.BehaviorActivity2">
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#00ddff"
+        android:gravity="center"
+        android:text="Hello world"
+        android:textColor="#ffffff"
+        android:textSize="18sp"/>
+    
+
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        app:tabIndicatorColor="#303F9F"
+        app:tabTextColor="#303F9F"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#303F9F"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:src="@drawable/pic"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"/>
+
+</android.support.design.widget.CoordinatorLayout>

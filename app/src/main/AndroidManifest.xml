@@ -112,7 +112,8 @@
             android:name="com.demo.song.webview.WebviewTestActivity"
             tools:ignore="DuplicateActivity" />
         <activity android:name="com.demo.song.behavior.BehaviorActivity1" />
-        <activity android:name="com.demo.song.behavior.BehaviorActivity2"></activity>
+        <activity android:name="com.demo.song.behavior.BehaviorActivity2"/>
+        <activity android:name="com.demo.song.behavior.BehaviorActivity3"/>
     </application>
 
 </manifest>

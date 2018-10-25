@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.demo.song.utils.Utils;
@@ -20,7 +21,7 @@ public class Behavior2Top extends CoordinatorLayout.Behavior<View> {
 
     private boolean upReach=false;
     private boolean downReach=false;
-    private int lastPos;
+    private volatile int lastPos;
 
     public Behavior2Top() {
     }
@@ -30,10 +31,17 @@ public class Behavior2Top extends CoordinatorLayout.Behavior<View> {
     }
 
     @Override
+    public boolean onInterceptTouchEvent(CoordinatorLayout parent, View child, MotionEvent ev) {
+        if(ev.getAction()==MotionEvent.ACTION_DOWN){
+            upReach=false;
+            downReach=false;
+            lastPos=-1;
+        }
+        return super.onInterceptTouchEvent(parent, child, ev);
+    }
+
+    @Override
     public boolean onStartNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull View child, @NonNull View directTargetChild, @NonNull View target, int axes, int type) {
-        upReach=false;
-        downReach=false;
-        lastPos=-1;
         return (axes&ViewCompat.SCROLL_AXIS_VERTICAL)!=0;
     }
 
@@ -57,32 +65,37 @@ public class Behavior2Top extends CoordinatorLayout.Behavior<View> {
             consumed[1]=0;
         }
         child.setTranslationY(translateY);*/
+        if(!(target instanceof RecyclerView))
+            return;
         int translateY= (int) child.getTranslationY();
         int firstPos=((LinearLayoutManager)((RecyclerView) target).getLayoutManager())
                 .findFirstCompletelyVisibleItemPosition();
-        if(translateY==-child.getHeight()&&firstPos==0&&firstPos<lastPos)
-            downReach=true;
-        Utils.logPrint(this,"translateY"+translateY);
-        Utils.logPrint(this,"-child.getHeight()"+-child.getHeight());
-        if(translateY==-child.getHeight()&&firstPos==0&&firstPos==lastPos)
-            upReach=true;
-        lastPos=firstPos;
-        if(upReach||downReach){
-            consumed[1]=dy;
+        //判断recyclerView本身可以滑动,则不消耗直接给recyclerview
+        if(firstPos>0){
+            lastPos=firstPos;
             return;
         }
-        if(firstPos>0)
-            return;
         translateY-=dy;
-        consumed[1]=dy;
-        if(translateY>0){
+        //向下拉到达TextView临界点（全部隐藏）
+        if(lastPos!=-1&&translateY>=-child.getHeight()&&firstPos==0&&firstPos<lastPos&&dy<0){
+            downReach=true;
+        }
+        //向上滑动到达TextView临界点（全部隐藏）
+        if(lastPos!=-1&&translateY<=-child.getHeight()&&firstPos==0&&firstPos==lastPos&&dy>0){
+            upReach=true;
+        }
+        lastPos=firstPos;
+        consumed[1]=dy; //默认消耗事件,即textview可以滑动
+        if(upReach||downReach){ //到达临界点，消耗事件却不做任何事
+            translateY=-child.getHeight();
+            consumed[1]=dy;
+        }else if(translateY>0){//已经到达临界点后再次点击向下滑动，RecyclerView可以向下滑动（然后这种情况recyclerView也到达顶部了，即实际效果是停止不动）
             translateY=0;
             consumed[1]=0;
-        }else if(translateY<-child.getHeight()){
+        }else if(translateY<-child.getHeight()){//已经到达临界点后再次点击向上滑动，RecyclerView可以向上滑动
             translateY=-child.getHeight();
             consumed[1]=0;
         }
         child.setTranslationY(translateY);
-
     }
 }
